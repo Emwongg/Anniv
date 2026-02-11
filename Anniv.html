@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary 💕</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: url('https://source.unsplash.com/random/1920x1080/?vintage,romance') no-repeat center center fixed;
+            background-size: cover;
+            color: #8b4513;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+        }
+        .overlay {
+            background: rgba(255, 228, 225, 0.9);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #dc143c;
+            text-shadow: 2px 2px #f5deb3;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            color: #daa520;
+            margin-bottom: 30px;
+        }
+        .story {
+            max-width: 700px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #f0e68c;
+            box-shadow: 0 0 15px #deb887;
+            font-size: 1.1em;
+            line-height: 1.7;
+            text-align: left;
+        }
+        .story[contenteditable] {
+            border: 2px dashed #dc143c;
+            outline: none;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px auto;
+            max-width: 800px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        /* Frame kotak lucu untuk gambar dan video */
+        .gallery .frame {
+            position: relative;
+            background: linear-gradient(45deg, #ff69b4, #ffb6c1, #ff1493);
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #daa520;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery .frame::before {
+            content: "💖😘🎉"; /* Emoji lucu di sudut */
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            font-size: 1.5em;
+            z-index: 1;
+        }
+        .gallery .frame:hover {
+            transform: rotate(5deg) scale(1.05);
+            box-shadow: 0 0 20px #ff69b4;
+        }
+        .gallery img, .gallery video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 3px solid #f5deb3;
+            display: block;
+        }
+        .gallery video:hover {
+            transform: rotate(5deg) scale(1.05);
+            box-shadow: 0 0 10px #daa520;
+        }
+        .upload {
+            margin: 20px;
+        }
+        .music {
+            margin: 20px auto;
+            max-width: 400px;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 1.3em;
+            color: #8b4513;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <h1>Happy 1st Anniversary, My Love! 🌹💖</h1>
+
+        <div class="story" contenteditable="true">
+            <h2>Hi My Little Baby🌹</h2>
+            <p>It's been a year, baby, and i still can't believe how lucky i am. Thank you for choosing me from the very beginning, Thank you for the love you give so sincerely, for the joy you bring into my life, and for every laugh that turns ordinary days into something beautiful. Being loved by you makes me feel like the luckiest man alive to stand beside the prettiest girl in this world. Thank you for believing in me, even when i doubted myself. Thank you for staying, for being patient, for holding my hand through the ups and downs. Thank you for not giving up on me when things weren't easy.</p>
+            <p>This past year with you has taught me what love truly means not just the sweet moments, but the quiet strength of choosing each other every single day. You've become my safe place to go, my comfort place to tell, and my reason to keep growing into a better man.💕</p>
+            <p>Thank you for being my love, my partner, and my home. As long as i'm breathing, i will choose you baby, and love you with everything i have. Today marks one year of us, but in my heart, this is only the beginning of forever. ❤️</p>
+            <p>Will You be My Girlfriend? Again?❤️</p>
+            </div>
+
+        <h2>📸🎥</h2>
+        <div class="gallery">
+            <!-- Foto 1 -->
+            <div class="frame">
+                <img src="foto1.JPG">
+            </div>
+            <!-- Foto 2 -->
+            <div class="frame">
+                <img src="foto2.JPG">
+            </div>
+            <!-- Video 1 -->
+            <div class="frame">
+                <video controls muted autoplay loop>
+                    <source src="vid1.mp4" type="video/mp4">
+                </video>
+            </div>
+            <!-- Tambahin elemen baru di sini -->
+        </div>
+
+        <div class="music">
+  <iframe
+    width="100%"
+    height="166"
+    scrolling="no"
+    frameborder="no"
+    allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/barianaq/so-easy-to-fall-in-love-with&color=%23ff69b4&auto_play=false">
+  </iframe>
+</div>
+
+
+        <footer>
+            I LOVE YOU 4 EVER MY LOVE ❤️
+        </footer>
+    </div>
+
+    <script>
+        // Modifikasi script untuk mendukung gambar dan video dengan frame
+        function addMedia() {
+            const files = document.getElementById('fileInput').files;
+            const gallery = document.querySelector('.gallery');
+            for (let file of files) {
+                const frame = document.createElement('div');
+                frame.className = 'frame';
+                if (file.type.startsWith('image/')) {
+                    const img = document.createElement('img');
+                    img.src = URL.createObjectURL(file);
+                    img.alt = 'Foto baru';
+                    frame.appendChild(img);
+                } else if (file.type.startsWith('video/')) {
+                    const video = document.createElement('video');
+                    video.src = URL.createObjectURL(file);
+                    video.controls = true;
+                    video.muted = true;
+                    video.autoplay = true;
+                    video.loop = true;
+                    frame.appendChild(video);
+                }
+                gallery.appendChild(frame);
+            }
+        }
+    </script>
+</body>
+</html>
